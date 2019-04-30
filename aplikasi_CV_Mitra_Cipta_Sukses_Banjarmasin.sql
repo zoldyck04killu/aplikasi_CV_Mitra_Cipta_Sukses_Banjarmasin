@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 25, 2019 at 09:28 AM
--- Server version: 10.3.13-MariaDB
--- PHP Version: 7.3.3
+-- Generation Time: Apr 30, 2019 at 09:24 AM
+-- Server version: 10.3.14-MariaDB
+-- PHP Version: 7.3.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -29,12 +29,20 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `jenis_bahan` (
-  `kode_jenis_bahan` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kode_jenis_bahan` int(50) NOT NULL,
   `harga_bahan` int(25) NOT NULL,
   `jenis_bahan` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `ketarangan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `ukuran_bahan` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `jenis_bahan`
+--
+
+INSERT INTO `jenis_bahan` (`kode_jenis_bahan`, `harga_bahan`, `jenis_bahan`, `ketarangan`, `ukuran_bahan`) VALUES
+(1, 5000, 'katon', 'tebal, warna cerah, hangat', 5),
+(2, 6000, 'sultra', 'lembut, warna minimalis, dingin', 5);
 
 -- --------------------------------------------------------
 
@@ -54,10 +62,17 @@ CREATE TABLE `login` (
 --
 
 CREATE TABLE `nama_barang` (
-  `kode_barang` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kode_barang` int(50) NOT NULL,
   `nama_barang` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `type_barang` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `nama_barang`
+--
+
+INSERT INTO `nama_barang` (`kode_barang`, `nama_barang`, `type_barang`) VALUES
+(2, 'poster', '1');
 
 -- --------------------------------------------------------
 
@@ -71,6 +86,38 @@ CREATE TABLE `pemesanan` (
   `alamat` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `no_hp` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `jenis_bahan`
+--
+ALTER TABLE `jenis_bahan`
+  ADD PRIMARY KEY (`kode_jenis_bahan`);
+
+--
+-- Indexes for table `nama_barang`
+--
+ALTER TABLE `nama_barang`
+  ADD PRIMARY KEY (`kode_barang`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `jenis_bahan`
+--
+ALTER TABLE `jenis_bahan`
+  MODIFY `kode_jenis_bahan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `nama_barang`
+--
+ALTER TABLE `nama_barang`
+  MODIFY `kode_barang` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

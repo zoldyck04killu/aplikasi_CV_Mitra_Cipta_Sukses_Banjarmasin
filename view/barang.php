@@ -1,29 +1,38 @@
-<div class="card">
-  <div class="panel-heading" style="background-color:#1ac295; text-align:center; height:80px; line-height:80px;color:white;font-weight:bold;font-size:24px;">
-    <div class="panel-title">Input Barang</div>
-  </div>
-  <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-12 col-md-offset-3 col-sm-8 col-sm-offset-2">
-            <div class="panel panel-info">
-            <div class="panel-body" >
-              <form>
-                <div class="form-group">
-                  <label for="exampleFormControlInput1">Nama Barang</label>
-                  <input type="text" class="form-control" id="exampleFormControlInput1">
-                </div>
-                <div class="form-group">
-                  <label for="exampleFormControlSelect1">Type Barang</label>
-                  <select class="form-control" id="exampleFormControlSelect1">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                </div>
-                <button type="button" class="btn btn-info">Simpan</button>
-              </form>
-            </div>
-        </div>
-    </div>
+<div class="header-hal">
+    <a href="?view=input-barang" class="btn btn-sm btn-primary">Input Barang</a>
+</div>
+<div class="container mt-5">
+
+<div class="daftar-table table-responsive">
+  <table class="table table-striped text-center" id="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Kode Barang</th>
+        <th>Nama Barang</th>
+        <th>Jenis Bahan </th>
+
+        <th>PILIHAN</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php
+      $data = $objAdmin->showBarang();
+      while ($a = $data->fetch_object()) {
+      ?>
+      <tr>
+        <td><?=$a->kode_barang ?></td>
+        <td><?=$a->nama_barang ?></td>
+        <td><?=$a->jenis_bahan ?></td>
+
+        <td>
+          <div class="btn-group">
+            <a href="?view=edit-barang&nik=<?=$a->kode_barang ?>" class="btn btn-sm btn-info">Edit</a>
+            <a href="?view=hapus-barang&nik=<?=$a->kode_barang ?>" onclick="return confirm('Hapus data ?')" class="btn btn-sm btn-danger">Hapus</a>
+          </div>
+        </td>
+      </tr>
+    <?php } ?>
+    </tbody>
+  </table>
 </div>
 </div>

@@ -10,8 +10,16 @@ elseif (@$_GET['view'] == 'barang')
 {
 	include 'view/barang.php';
 }
+elseif (@$_GET['view'] == 'input-barang')
+{
+	include 'view/input-barang.php';
+}
 elseif (@$_GET['view'] == 'bahan')
 {
 	include 'view/jenis-bahan.php';
+}
+elseif (@$_GET['view'] == 'input-bahan')
+{
+	include 'view/input-jenis-bahan.php';
 }
 //

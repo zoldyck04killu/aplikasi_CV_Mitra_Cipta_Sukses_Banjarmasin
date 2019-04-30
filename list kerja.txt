@@ -1,6 +1,6 @@
 info Produk
-CRUD Barang
-CRUD jenis barang
+CRUD Barang (create, read sudah)
+CRUD jenis barang (create, read sudah)
 Pemesanan
 cara pemesanan
 about us
