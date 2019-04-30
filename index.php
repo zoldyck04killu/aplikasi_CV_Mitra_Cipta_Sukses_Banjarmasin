@@ -1,3 +1,12 @@
+<?php
+// require_once 'config/autoload.php';
+
+require_once 'config/config.php';
+require_once 'config/connection.php';
+// include('models/admin.php');
+$obj = new Connection($host, $user, $pass, $db);
+// $objAdmin = new Admin($obj);
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,7 +15,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?=base_url();?>assets/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/DataTables/datatables.min.css"/>
+
+    <script src="<?php echo base_url(); ?>assets/jquery-3.1.1.min.js"></script>
+
+    <script src="<?=base_url();?>assets/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/DataTables/datatables.min.js"></script>
+
+    <script src="<?php echo base_url(); ?>assets/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
 
     <title>Hello, world!</title>
   </head>
@@ -25,17 +45,21 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav"> &nbsp; 
-          <a class="nav-item nav-link btn btn-info btn-md" href="#">Home <span class="sr-only">(current)</span></a>&nbsp; 
-          <a class="nav-item nav-link btn btn-info btn-md" href="#">Info Produk</a> &nbsp; 
-          <a class="nav-item nav-link btn btn-info btn-md" href="#">About US</a> &nbsp; 
-          <a class="nav-item nav-link btn btn-danger btn-md" style="position: relative; left: 170%;" href="#">Cara Pemesanan</a> &nbsp; 
+        <div class="navbar-nav"> &nbsp;
+          <a class="nav-item nav-link btn btn-info btn-md" href="#">Home <span class="sr-only">(current)</span></a>&nbsp;
+          <a class="nav-item nav-link btn btn-info btn-md" href="#">Info Produk</a> &nbsp;
+          <a class="nav-item nav-link btn btn-info btn-md" href="#">About US</a> &nbsp;
+          <a class="nav-item nav-link btn btn-info btn-md" href="?view=barang">Barang</a> &nbsp;
+          <a class="nav-item nav-link btn btn-info btn-md" href="?view=bahan">Jenis Bahan</a>
+
+
+          <a class="nav-item nav-link btn btn-danger btn-md" style="position: relative; left: 120%;" href="#">Cara Pemesanan</a> &nbsp;
         </div>
       </div>
     </nav>
 
     <div class="container mt-3" id="" style="">
-    
+
           <?php include('page/page.php'); ?>
 
     </div>

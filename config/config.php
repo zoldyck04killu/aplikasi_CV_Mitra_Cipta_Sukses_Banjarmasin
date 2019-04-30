@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 
 
@@ -7,8 +7,8 @@ session_start();
 
 $host = "localhost";
 $user = "root";
-$pass = "123";
-$db   = "";
+$pass = "4";
+$db   = "aplikasi_CV_Mitra_Cipta_Sukses_Banjarmasin";
 
 // end database settings
 
@@ -16,7 +16,7 @@ $db   = "";
 
 function base_url($url = null)
 {
-	$base_url = "http://localhost/aplikasi_pemilihan_BEM/";
+	$base_url = "http://localhost/aplikasi_CV_Mitra_Cipta_Sukses_Banjarmasin/";
 	if ($url != null ) {
 		return $base_url."/".$url;
 	} else  {

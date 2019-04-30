@@ -1,0 +1,8 @@
+info Produk
+CRUD Barang
+CRUD jenis barang
+Pemesanan
+cara pemesanan
+about us
+login
+register nya dimana. ?
