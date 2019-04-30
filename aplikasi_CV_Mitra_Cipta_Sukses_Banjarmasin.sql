@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 30, 2019 at 09:24 AM
+-- Generation Time: Apr 30, 2019 at 05:22 PM
 -- Server version: 10.3.14-MariaDB
 -- PHP Version: 7.3.4
 
@@ -47,6 +47,25 @@ INSERT INTO `jenis_bahan` (`kode_jenis_bahan`, `harga_bahan`, `jenis_bahan`, `ke
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `kategori`
+--
+
+CREATE TABLE `kategori` (
+  `id_kategori` int(50) NOT NULL,
+  `nama_kategori` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `kategori`
+--
+
+INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
+(1, 'Digital Printing'),
+(2, 'Percetakan');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `login`
 --
 
@@ -64,15 +83,16 @@ CREATE TABLE `login` (
 CREATE TABLE `nama_barang` (
   `kode_barang` int(50) NOT NULL,
   `nama_barang` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `type_barang` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
+  `type_barang` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kategori` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `nama_barang`
 --
 
-INSERT INTO `nama_barang` (`kode_barang`, `nama_barang`, `type_barang`) VALUES
-(2, 'poster', '1');
+INSERT INTO `nama_barang` (`kode_barang`, `nama_barang`, `type_barang`, `kategori`) VALUES
+(3, 'Baliho', '1', 1);
 
 -- --------------------------------------------------------
 
@@ -98,6 +118,12 @@ ALTER TABLE `jenis_bahan`
   ADD PRIMARY KEY (`kode_jenis_bahan`);
 
 --
+-- Indexes for table `kategori`
+--
+ALTER TABLE `kategori`
+  ADD PRIMARY KEY (`id_kategori`);
+
+--
 -- Indexes for table `nama_barang`
 --
 ALTER TABLE `nama_barang`
@@ -114,10 +140,16 @@ ALTER TABLE `jenis_bahan`
   MODIFY `kode_jenis_bahan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `kategori`
+--
+ALTER TABLE `kategori`
+  MODIFY `id_kategori` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `nama_barang`
 --
 ALTER TABLE `nama_barang`
-  MODIFY `kode_barang` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `kode_barang` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

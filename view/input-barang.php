@@ -23,6 +23,19 @@
                     ?>
                   </select>
                 </div>
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Kategori</label>
+                  <select class="form-control" id="exampleFormControlSelect1" name="kategori">
+                    <?php
+                    $data = $objAdmin->showKategori();
+                    while ($a = $data->fetch_object()) {
+                    ?>
+                    <option value="<?= $a->id_kategori ?>"><?= $a->nama_kategori ?></option>
+                    <?php
+                    }
+                    ?>
+                  </select>
+                </div>
                 <button type="submit" class="btn btn-info" name="simpan">Simpan</button>
               </form>
             </div>
@@ -36,8 +49,10 @@ if (isset($_POST['simpan'])) {
 
   $barang 		  = $_POST['barang'];
 	$jenis_bahan 		  = $_POST['jenis_bahan'];
+  $kategori 		  = $_POST['kategori'];
 
-	$insert = $objAdmin->insertBarang($barang, $jenis_bahan);
+
+	$insert = $objAdmin->insertBarang($barang, $jenis_bahan,$kategori);
 
 	if ($insert) {
 		echo '

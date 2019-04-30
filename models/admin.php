@@ -30,21 +30,37 @@ class Admin
     return $query;
   }
 
-  function insertBarang($barang, $jenis_bahan)
+  function insertBarang($barang, $jenis_bahan,$kategori)
 {
     $db = $this->mysqli->conn;
-    $db->query("INSERT INTO nama_barang (nama_barang,type_barang) VALUES ('$barang', '$jenis_bahan')") or die ($db->error);
+    $db->query("INSERT INTO nama_barang (nama_barang,type_barang,kategori) VALUES ('$barang', '$jenis_bahan','$kategori')") or die ($db->error);
     return true;
   }
 
   public function showBarang()
   {
     $db = $this->mysqli->conn;
-    $sql = " SELECT * FROM nama_barang INNER JOIN jenis_bahan ON nama_barang.type_barang = jenis_bahan.kode_jenis_bahan ";
+    $sql = " SELECT * FROM nama_barang
+          INNER JOIN jenis_bahan ON nama_barang.type_barang = jenis_bahan.kode_jenis_bahan
+          INNER JOIN kategori ON nama_barang.kategori = kategori.id_kategori ";
     $query = $db->query($sql);
     return $query;
   }
 
+  function insertKategori($nama_kategori)
+{
+    $db = $this->mysqli->conn;
+    $db->query("INSERT INTO kategori (nama_kategori) VALUES ('$nama_kategori')") or die ($db->error);
+    return true;
+  }
+
+  public function showKategori()
+  {
+    $db = $this->mysqli->conn;
+    $sql = " SELECT * FROM kategori ";
+    $query = $db->query($sql);
+    return $query;
+  }
 
 }// end class
 

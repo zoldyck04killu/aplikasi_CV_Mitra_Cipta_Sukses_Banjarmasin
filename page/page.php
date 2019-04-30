@@ -22,4 +22,12 @@ elseif (@$_GET['view'] == 'input-bahan')
 {
 	include 'view/input-jenis-bahan.php';
 }
+elseif (@$_GET['view'] == 'kategori')
+{
+	include 'view/kategori.php';
+}
+elseif (@$_GET['view'] == 'input-kategori')
+{
+	include 'view/input-kategori.php';
+}
 //

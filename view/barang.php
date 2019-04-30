@@ -10,6 +10,7 @@
         <th>Kode Barang</th>
         <th>Nama Barang</th>
         <th>Jenis Bahan </th>
+        <th>Kategori </th>
 
         <th>PILIHAN</th>
       </tr>
@@ -23,6 +24,8 @@
         <td><?=$a->kode_barang ?></td>
         <td><?=$a->nama_barang ?></td>
         <td><?=$a->jenis_bahan ?></td>
+        <td><?=$a->nama_kategori ?></td>
+
 
         <td>
           <div class="btn-group">
