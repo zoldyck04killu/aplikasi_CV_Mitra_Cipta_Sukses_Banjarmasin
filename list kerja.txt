@@ -1,8 +1,9 @@
 info Produk
-CRUD Barang (create, read sudah)
+CRUD Barang (create, read sudah) 
 CRUD jenis barang (create, read sudah)
 CRUD kategori (create, read sudah)
-Pemesanan
+Pemesanan (sudah)
+Data Pemesanan (sudah)
 cara pemesanan
 about us
 login

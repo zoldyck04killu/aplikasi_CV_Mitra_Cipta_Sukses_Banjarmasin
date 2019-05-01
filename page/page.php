@@ -30,4 +30,12 @@ elseif (@$_GET['view'] == 'input-kategori')
 {
 	include 'view/input-kategori.php';
 }
+elseif (@$_GET['view'] == 'pesan')
+{
+	include 'view/pesan.php';
+}
+elseif (@$_GET['view'] == 'data-pemesanan')
+{
+	include 'view/data-pemesanan.php';
+}
 //

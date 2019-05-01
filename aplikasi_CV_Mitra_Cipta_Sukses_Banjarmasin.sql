@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 30, 2019 at 05:22 PM
+-- Generation Time: May 01, 2019 at 03:17 PM
 -- Server version: 10.3.14-MariaDB
 -- PHP Version: 7.3.4
 
@@ -41,7 +41,7 @@ CREATE TABLE `jenis_bahan` (
 --
 
 INSERT INTO `jenis_bahan` (`kode_jenis_bahan`, `harga_bahan`, `jenis_bahan`, `ketarangan`, `ukuran_bahan`) VALUES
-(1, 5000, 'katon', 'tebal, warna cerah, hangat', 5),
+(1, 5000, 'katon', 'tebal, warna cerah, hangat', 2),
 (2, 6000, 'sultra', 'lembut, warna minimalis, dingin', 5);
 
 -- --------------------------------------------------------
@@ -101,11 +101,20 @@ INSERT INTO `nama_barang` (`kode_barang`, `nama_barang`, `type_barang`, `kategor
 --
 
 CREATE TABLE `pemesanan` (
-  `kode_pemesanan` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kode_pemesanan` int(50) NOT NULL,
   `nama_pemesan` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `alamat` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `barang` int(50) NOT NULL,
+  `ukuran` int(10) NOT NULL,
   `no_hp` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `pemesanan`
+--
+
+INSERT INTO `pemesanan` (`kode_pemesanan`, `nama_pemesan`, `alamat`, `barang`, `ukuran`, `no_hp`) VALUES
+(1, 'aldi', 'jl mahligai', 3, 3, '0812343435');
 
 --
 -- Indexes for dumped tables
@@ -130,6 +139,12 @@ ALTER TABLE `nama_barang`
   ADD PRIMARY KEY (`kode_barang`);
 
 --
+-- Indexes for table `pemesanan`
+--
+ALTER TABLE `pemesanan`
+  ADD PRIMARY KEY (`kode_pemesanan`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -150,6 +165,12 @@ ALTER TABLE `kategori`
 --
 ALTER TABLE `nama_barang`
   MODIFY `kode_barang` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `pemesanan`
+--
+ALTER TABLE `pemesanan`
+  MODIFY `kode_pemesanan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
