@@ -30,8 +30,7 @@
 
         <td>
           <div class="btn-group">
-            <a href="?view=edit-pemesanan&nik=<?=$a->kode_pemesanan ?>" class="btn btn-sm btn-info">Edit</a>
-            <a href="?view=hapus-pemesanan&nik=<?=$a->kode_pemesanan ?>" onclick="return confirm('Hapus data ?')" class="btn btn-sm btn-danger">Hapus</a>
+            <a href="?view=hapus-pemesanan&id-pesan=<?=$a->kode_pemesanan ?>" onclick="return confirm('Hapus data ?')" class="btn btn-sm btn-danger">Hapus</a>
           </div>
         </td>
       </tr>

@@ -24,8 +24,8 @@
 
         <td>
           <div class="btn-group">
-            <a href="?view=edit-kategori&nik=<?=$a->id_kategori ?>" class="btn btn-sm btn-info">Edit</a>
-            <a href="?view=hapus-kategori&nik=<?=$a->id_kategori ?>" onclick="return confirm('Hapus data ?')" class="btn btn-sm btn-danger">Hapus</a>
+            <a href="?view=edit-kategori&id_kategori=<?=$a->id_kategori ?>" class="btn btn-sm btn-info">Edit</a>
+            <a href="?view=hapus-kategori&id_kategori=<?=$a->id_kategori ?>" onclick="return confirm('Hapus data ?')" class="btn btn-sm btn-danger">Hapus</a>
           </div>
         </td>
       </tr>

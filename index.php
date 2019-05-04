@@ -42,7 +42,7 @@ $objAdmin = new Admin($obj);
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav"> &nbsp;
-          <a class="nav-item nav-link btn btn-info btn-md" href="#">Home <span class="sr-only">(current)</span></a>&nbsp;
+          <a class="nav-item nav-link btn btn-info btn-md" href="?view=home">Home <span class="sr-only">(current)</span></a>&nbsp;
           <a class="nav-item nav-link btn btn-info btn-md" href="#">Info Produk</a> &nbsp;
           <a class="nav-item nav-link btn btn-info btn-md" href="#">About US</a> &nbsp;
           <a class="nav-item nav-link btn btn-info btn-md" href="?view=barang">Barang</a> &nbsp;

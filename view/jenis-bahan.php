@@ -23,15 +23,15 @@
       ?>
       <tr>
         <td><?=$a->kode_jenis_bahan ?></td>
-        <td><?=$a->harga_bahan ?></td>
+        <td><?=$rp = "Rp " . number_format($a->harga_bahan, 2, ',', '.')?></td>
         <td><?=$a->jenis_bahan ?></td>
         <td><?=$a->ukuran_bahan ?></td>
         <td><?=$a->ketarangan ?></td>
 
         <td>
           <div class="btn-group">
-            <a href="?view=edit-jenis-bahan&nik=<?=$a->kode_jenis_bahan ?>" class="btn btn-sm btn-info">Edit</a>
-            <a href="?view=hapus-jenis-bahan&nik=<?=$a->kode_jenis_bahan ?>" onclick="return confirm('Hapus data ?')" class="btn btn-sm btn-danger">Hapus</a>
+            <a href="?view=edit-jenis-bahan&id_bahan=<?=$a->kode_jenis_bahan ?>" class="btn btn-sm btn-info">Edit</a>
+            <a href="?view=hapus-jenis-bahan&id_bahan=<?=$a->kode_jenis_bahan ?>" onclick="return confirm('Hapus data ?')" class="btn btn-sm btn-danger">Hapus</a>
           </div>
         </td>
       </tr>

@@ -1,10 +1,10 @@
-info Produk
-CRUD Barang (create, read sudah) 
-CRUD jenis barang (create, read sudah)
-CRUD kategori (create, read sudah)
+info Produk (BELUM)
+CRUD Barang (clear) 
+CRUD jenis barang (clear)
+CRUD kategori (clear)
 Pemesanan (sudah)
 Data Pemesanan (sudah)
-cara pemesanan
-about us
-login
-register nya dimana. ?
+cara pemesanan (BELUM)
+about us (BELUM)
+login (SUDAH)
+register nya dimana. ? <= registernya mugkin kd usah , soalnya admin aja, dan pemesanan pengunjung lain user terdaftar

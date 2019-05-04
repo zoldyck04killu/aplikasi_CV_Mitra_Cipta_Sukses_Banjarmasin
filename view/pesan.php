@@ -56,7 +56,7 @@ if (isset($_POST['simpan'])) {
 
 	if ($insert) {
 		echo '
-			<script> alert("Berhasil") </script>
+			<script> alert("Terimakasih sudah memesan, selanjutnya kami akan menghubingi anda"); window.location="?view=home" </script>
 		';
 	}else{
 		echo '
