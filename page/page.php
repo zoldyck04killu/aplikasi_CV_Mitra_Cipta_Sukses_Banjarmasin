@@ -142,5 +142,9 @@ elseif (@$_GET['view'] == 'contact')
 {
 	include 'view/contact.php';
 }
+elseif (@$_GET['view'] == 'cara-pemesanan')
+{
+	include 'view/cara-pemesanan.php';
+}
 
 //

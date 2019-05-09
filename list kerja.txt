@@ -1,13 +1,12 @@
-info Produk (BELUM)
 CRUD Barang (clear)
 CRUD jenis barang (clear)
 CRUD kategori (clear)
 Pemesanan (sudah)
 Data Pemesanan (sudah)
-cara pemesanan (BELUM)
-about us (BELUM)
 login (SUDAH)
 register nya dimana. ? <= registernya mugkin kd usah , soalnya admin aja, dan pemesanan pengunjung lain user terdaftar
-info produk
-laporan pemesanan
-hak akses
+info produk (sudah)
+laporan pemesanan (sudah)
+hak akses (sudah)
+cara pemesanan (sudah)
+visi misi, sejarah, dan contact belum ada isi nya

@@ -24,7 +24,7 @@ $objAdmin = new Admin($obj);
 
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/DataTables/datatables.min.js"></script>
 
-    <title>Hello, world!</title>
+    <title>CV. Mitra Cipta Sukses Banjarmasin</title>
   </head>
   <body>
 
@@ -53,12 +53,12 @@ $objAdmin = new Admin($obj);
 
             <a class="nav-item nav-link btn btn-info btn-md" href="?view=pesan">Pemesanan Barang</a> &nbsp;
 
-            <a class="nav-item nav-link btn btn-danger btn-md" style="position: relative; left: 20%;" href="#">Cara Pemesanan</a> &nbsp;
+            <a class="nav-item nav-link btn btn-danger btn-md" style="position: relative; left: 20%;" href="?view=cara-pemesanan">Cara Pemesanan</a> &nbsp;
 
           <?php else: ?>
           <a class="nav-item nav-link btn btn-info btn-md" href="?view=pesan">Pemesanan Barang</a> &nbsp;
 
-          <a class="nav-item nav-link btn btn-danger btn-md" style="position: relative; left: 120%;" href="#">Cara Pemesanan</a> &nbsp;
+          <a class="nav-item nav-link btn btn-danger btn-md" style="position: relative; left: 120%;" href="?view=cara-pemesanan">Cara Pemesanan</a> &nbsp;
         <?php endif; ?>
 
         </div>
@@ -87,6 +87,7 @@ $objAdmin = new Admin($obj);
 <style media="screen">
 .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link {
   color: #ffffff;
+  border-radius: 20px;
 }
 .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
   color: #ffffff;
