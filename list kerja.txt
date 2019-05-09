@@ -1,5 +1,5 @@
 info Produk (BELUM)
-CRUD Barang (clear) 
+CRUD Barang (clear)
 CRUD jenis barang (clear)
 CRUD kategori (clear)
 Pemesanan (sudah)
@@ -8,3 +8,6 @@ cara pemesanan (BELUM)
 about us (BELUM)
 login (SUDAH)
 register nya dimana. ? <= registernya mugkin kd usah , soalnya admin aja, dan pemesanan pengunjung lain user terdaftar
+info produk
+laporan pemesanan
+hak akses

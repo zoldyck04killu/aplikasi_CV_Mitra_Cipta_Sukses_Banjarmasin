@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 04, 2019 at 11:16 AM
+-- Generation Time: May 09, 2019 at 07:02 PM
 -- Server version: 10.3.14-MariaDB
--- PHP Version: 7.3.5
+-- PHP Version: 7.3.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -41,7 +41,7 @@ CREATE TABLE `jenis_bahan` (
 --
 
 INSERT INTO `jenis_bahan` (`kode_jenis_bahan`, `harga_bahan`, `jenis_bahan`, `ketarangan`, `ukuran_bahan`) VALUES
-(3, 90000, 'Kertas', 'ok', 9);
+(3, 90000, 'Kertas', 'ok', 4);
 
 -- --------------------------------------------------------
 
@@ -98,8 +98,9 @@ CREATE TABLE `nama_barang` (
 --
 
 INSERT INTO `nama_barang` (`kode_barang`, `nama_barang`, `type_barang`, `kategori`) VALUES
-(8, 'Printer', '2', 1),
-(10, 'Printer', '3', 2);
+(10, 'Printer', '3', 2),
+(11, 'kulkas', '3', 2),
+(12, 'Baliho', '3', 3);
 
 -- --------------------------------------------------------
 
@@ -121,7 +122,8 @@ CREATE TABLE `pemesanan` (
 --
 
 INSERT INTO `pemesanan` (`kode_pemesanan`, `nama_pemesan`, `alamat`, `barang`, `ukuran`, `no_hp`) VALUES
-(1, 'aldi', 'jl mahligai', 3, 3, '0812343435');
+(1, 'aldi', 'jl mahligai', 3, 3, '0812343435'),
+(3, 'syarif', 'jln', 10, 5, '0816261213');
 
 --
 -- Indexes for dumped tables
@@ -171,13 +173,13 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `nama_barang`
 --
 ALTER TABLE `nama_barang`
-  MODIFY `kode_barang` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `kode_barang` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `pemesanan`
 --
 ALTER TABLE `pemesanan`
-  MODIFY `kode_pemesanan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `kode_pemesanan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

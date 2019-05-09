@@ -22,7 +22,7 @@ class Admin
 
       if ($cekUser == 1) {
           if (password_verify($password, $cekPass->password)) {
-              
+
               $_SESSION['admin'] = $cekPass->id_admin;
 
               return true;
@@ -112,12 +112,20 @@ class Admin
     return $query;
   }
 
+  public function showBarangKategori($id_kategori)
+  {
+    $db = $this->mysqli->conn;
+    $sql = " SELECT * FROM nama_barang WHERE kategori = '$id_kategori'";
+    $query = $db->query($sql);
+    return $query;
+  }
+
   public function edit_brg($id)
   {
     $db = $this->mysqli->conn;
     $sql = " SELECT * FROM nama_barang
           INNER JOIN jenis_bahan ON nama_barang.type_barang = jenis_bahan.kode_jenis_bahan
-          INNER JOIN kategori ON nama_barang.kategori = kategori.id_kategori 
+          INNER JOIN kategori ON nama_barang.kategori = kategori.id_kategori
           WHERE nama_barang.kode_barang = '$id' ";
     $query = $db->query($sql);
     return $query;

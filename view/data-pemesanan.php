@@ -1,6 +1,8 @@
 
+<div class="btn-group">
+  <a href="view/laporan/laporan-pemesanan.php" class="btn btn-sm btn-dark">Cetak</a>
+</div>
 <div class="container mt-5">
-
 <div class="daftar-table table-responsive">
   <table class="table table-striped text-center" id="table">
     <thead class="thead-dark">

@@ -29,7 +29,7 @@ elseif(@$_GET['view'] == 'edit-barang')
 {
 	include 'view/edit-barang.php';
 }
-elseif (@$_GET['view'] == 'hapus-barang') 
+elseif (@$_GET['view'] == 'hapus-barang')
 {
 	$kd_brg = @$_GET['id_brg'];
 	$hapus = $objAdmin->hapusBarang($kd_brg);
@@ -53,11 +53,11 @@ elseif (@$_GET['view'] == 'input-bahan')
 {
 	include 'view/input-jenis-bahan.php';
 }
-elseif (@$_GET['view'] == 'edit-jenis-bahan') 
+elseif (@$_GET['view'] == 'edit-jenis-bahan')
 {
 	include 'view/edit-jenis-bahan.php';
 }
-elseif (@$_GET['view'] == 'hapus-jenis-bahan') 
+elseif (@$_GET['view'] == 'hapus-jenis-bahan')
 {
 	$kd_bahan = @$_GET['id_bahan'];
 	$hapus = $objAdmin->hapusJenisBahan($kd_bahan);
@@ -80,11 +80,11 @@ elseif (@$_GET['view'] == 'input-kategori')
 {
 	include 'view/input-kategori.php';
 }
-elseif (@$_GET['view'] == 'edit-kategori') 
+elseif (@$_GET['view'] == 'edit-kategori')
 {
 	include 'view/edit-kategori.php';
 }
-elseif (@$_GET['view'] == 'hapus-kategori') 
+elseif (@$_GET['view'] == 'hapus-kategori')
 {
 	$id_kategori = @$_GET['id_kategori'];
 	$hapus = $objAdmin->hapusKategori($id_kategori);
@@ -107,7 +107,7 @@ elseif (@$_GET['view'] == 'data-pemesanan')
 {
 	include 'view/data-pemesanan.php';
 }
-elseif (@$_GET['view'] == 'hapus-pemesanan') 
+elseif (@$_GET['view'] == 'hapus-pemesanan')
 {
 	$id_pemesanan = @$_GET['id-pesan'];
 	$hapus = $objAdmin->hapusPemesanan($id_pemesanan);
@@ -121,6 +121,26 @@ elseif (@$_GET['view'] == 'hapus-pemesanan')
 			<script> alert("Gagal") </script>
 		';
 	}
+}
+elseif (@$_GET['view'] == 'info-produk')
+{
+	include 'view/info-produk.php';
+}
+elseif (@$_GET['view'] == 'about')
+{
+	include 'view/about-us.php';
+}
+elseif (@$_GET['view'] == 'sejarah')
+{
+	include 'view/sejarah.php';
+}
+elseif (@$_GET['view'] == 'visi-misi')
+{
+	include 'view/visi-misi.php';
+}
+elseif (@$_GET['view'] == 'contact')
+{
+	include 'view/contact.php';
 }
 
 //

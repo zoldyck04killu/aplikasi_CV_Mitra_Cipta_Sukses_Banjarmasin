@@ -43,19 +43,24 @@ $objAdmin = new Admin($obj);
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav"> &nbsp;
           <a class="nav-item nav-link btn btn-info btn-md" href="?view=home">Home <span class="sr-only">(current)</span></a>&nbsp;
-          <a class="nav-item nav-link btn btn-info btn-md" href="#">Info Produk</a> &nbsp;
-          <a class="nav-item nav-link btn btn-info btn-md" href="#">About US</a> &nbsp;
-          <a class="nav-item nav-link btn btn-info btn-md" href="?view=barang">Barang</a> &nbsp;
-          <a class="nav-item nav-link btn btn-info btn-md" href="?view=bahan">Jenis Bahan</a> &nbsp;
-          <a class="nav-item nav-link btn btn-info btn-md" href="?view=kategori">Kategori</a> &nbsp;
+          <a class="nav-item nav-link btn btn-info btn-md" href="?view=info-produk">Info Produk</a> &nbsp;
+          <a class="nav-item nav-link btn btn-info btn-md" href="?view=about">About US</a> &nbsp;
+          <?php if (isset($_SESSION['admin'])): ?>
+            <a class="nav-item nav-link btn btn-info btn-md" href="?view=barang">Barang</a> &nbsp;
+            <a class="nav-item nav-link btn btn-info btn-md" href="?view=bahan">Jenis Bahan</a> &nbsp;
+            <a class="nav-item nav-link btn btn-info btn-md" href="?view=kategori">Kategori</a> &nbsp;
+            <a class="nav-item nav-link btn btn-info btn-md" href="?view=data-pemesanan">Data Pemesanan</a> &nbsp;
+
+            <a class="nav-item nav-link btn btn-info btn-md" href="?view=pesan">Pemesanan Barang</a> &nbsp;
+
+            <a class="nav-item nav-link btn btn-danger btn-md" style="position: relative; left: 20%;" href="#">Cara Pemesanan</a> &nbsp;
+
+          <?php else: ?>
           <a class="nav-item nav-link btn btn-info btn-md" href="?view=pesan">Pemesanan Barang</a> &nbsp;
-          <a class="nav-item nav-link btn btn-info btn-md" href="?view=data-pemesanan">Data Pemesanan</a> &nbsp;
 
+          <a class="nav-item nav-link btn btn-danger btn-md" style="position: relative; left: 120%;" href="#">Cara Pemesanan</a> &nbsp;
+        <?php endif; ?>
 
-
-
-
-          <a class="nav-item nav-link btn btn-danger btn-md" style="position: relative; left: 50%;" href="#">Cara Pemesanan</a> &nbsp;
         </div>
       </div>
     </nav>
@@ -79,3 +84,11 @@ $objAdmin = new Admin($obj);
 
   </body>
 </html>
+<style media="screen">
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link {
+  color: #ffffff;
+}
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+</style>
