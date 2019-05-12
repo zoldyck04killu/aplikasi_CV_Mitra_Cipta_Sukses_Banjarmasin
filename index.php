@@ -30,7 +30,7 @@ $objAdmin = new Admin($obj);
 
     <div class="ml-4" id="" style="">
       <br>
-      <h3 class="text-muted">CV. Mitra Cipta Sukses Banjarmasin (LOGO)</h3>
+      <h3 class="text-muted">CV. Mitra Cipta Sukses Banjarmasin <img src="assets/image/mcs.jpeg" alt="" width="90" height="50" style="margin-right:15px; "></h3>
       <hr>
       <p>JL R.K.ILIR Np. 563 Banjarmasin</p>
     </div>

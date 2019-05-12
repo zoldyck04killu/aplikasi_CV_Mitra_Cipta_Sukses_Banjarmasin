@@ -19,7 +19,7 @@ $pdf = new TCPDF('L', PDF_UNIT, PDF_PAGE_FORMAT, True, 'UTF-8', false);
 // $pdf->SetSubject('Kwitansi Penjualan');
 
 // header & footer data
-$pdf->SetHeaderData('1.jpg', 20, 'CV. Mitra Cipta Sukses Banjarmasin',
+$pdf->SetHeaderData('mcs.jpeg', 20, 'CV. Mitra Cipta Sukses Banjarmasin',
             "Alamat : JL R.K.ILIR Np. 563 Banjarmasin \nTelp. (0511) 4315530 - 4315531", array(48,89,112), array(48,89,112));
 
 // $pdf->SetHeaderData('logo.png', 30, 'BIDAN PRAKTEK MANDIRI (BPM)', PDF_HEADER_STRING);
