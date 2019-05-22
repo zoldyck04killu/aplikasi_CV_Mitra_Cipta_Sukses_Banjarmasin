@@ -11,6 +11,7 @@
         <th>Nama Barang</th>
         <th>Jenis Bahan </th>
         <th>Kategori </th>
+        <th>Harga</th>
 
         <th>PILIHAN</th>
       </tr>
@@ -25,6 +26,7 @@
         <td><?=$a->nama_barang ?></td>
         <td><?=$a->jenis_bahan ?></td>
         <td><?=$a->nama_kategori ?></td>
+        <td><?php $rp = "Rp " . number_format($a->harga,2,',','.'); echo $rp; ?></td>
 
 
         <td>

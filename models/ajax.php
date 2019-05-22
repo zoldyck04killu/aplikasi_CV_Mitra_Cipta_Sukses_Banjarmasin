@@ -2,20 +2,17 @@
 
   require_once '../config/config.php';
   require_once '../config/connection.php';
+  include('../models/admin.php');
   $obj = new Connection($host, $user, $pass, $db);
+  $objAdmin = new Admin($obj);
 
-  if ($_GET['proses'] == 'namaAnggota') {
-          $mysqli = $obj->conn;
-          $id = $_GET['id'];
-          $sql = "SELECT nama_anggota FROM anggota WHERE id_anggota=$id";
-          $query = $mysqli->query($sql);
-          $namaAnggota = $query->fetch_object();
-          // var_dump($stok_sarang);
-          // echo $stok_sarang['stok'];
-          $data = array(
-                        'namaAnggota' => $namaAnggota->nama_anggota
-                        );
-          echo json_encode($data);
+  if (@$_REQUEST['type'] == 'get_harga') {
+      
+      $kode_brg = @$_POST['kode_brg'];
+
+      $harga = $objAdmin->get_harga($kode_brg)->fetch_object();
+
+      echo json_encode($harga);
   }
 
 ?>

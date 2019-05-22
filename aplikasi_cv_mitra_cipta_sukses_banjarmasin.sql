@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 09, 2019 at 07:02 PM
--- Server version: 10.3.14-MariaDB
--- PHP Version: 7.3.4
+-- Host: 127.0.0.1
+-- Generation Time: May 21, 2019 at 03:53 AM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 5.6.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `aplikasi_CV_Mitra_Cipta_Sukses_Banjarmasin`
+-- Database: `aplikasi_cv_mitra_cipta_sukses_banjarmasin`
 --
 
 -- --------------------------------------------------------
@@ -41,7 +41,7 @@ CREATE TABLE `jenis_bahan` (
 --
 
 INSERT INTO `jenis_bahan` (`kode_jenis_bahan`, `harga_bahan`, `jenis_bahan`, `ketarangan`, `ukuran_bahan`) VALUES
-(3, 90000, 'Kertas', 'ok', 4);
+(3, 90000, 'Kertas', 'ok', 2);
 
 -- --------------------------------------------------------
 
@@ -90,17 +90,20 @@ CREATE TABLE `nama_barang` (
   `kode_barang` int(50) NOT NULL,
   `nama_barang` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `type_barang` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `kategori` int(50) NOT NULL
+  `kategori` int(50) NOT NULL,
+  `harga` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `nama_barang`
 --
 
-INSERT INTO `nama_barang` (`kode_barang`, `nama_barang`, `type_barang`, `kategori`) VALUES
-(10, 'Printer', '3', 2),
-(11, 'kulkas', '3', 2),
-(12, 'Baliho', '3', 3);
+INSERT INTO `nama_barang` (`kode_barang`, `nama_barang`, `type_barang`, `kategori`, `harga`) VALUES
+(10, 'Printer', '3', 2, 1000000),
+(11, 'kulkas', '3', 2, 90000),
+(12, 'Baliho', '3', 3, 500000),
+(13, 'Karung', '3', 2, 40000),
+(14, 'Tisu', '3', 2, 10000);
 
 -- --------------------------------------------------------
 
@@ -123,7 +126,9 @@ CREATE TABLE `pemesanan` (
 
 INSERT INTO `pemesanan` (`kode_pemesanan`, `nama_pemesan`, `alamat`, `barang`, `ukuran`, `no_hp`) VALUES
 (1, 'aldi', 'jl mahligai', 3, 3, '0812343435'),
-(3, 'syarif', 'jln', 10, 5, '0816261213');
+(3, 'syarif', 'jln', 10, 5, '0816261213'),
+(4, 'Tes', 'jalan oke', 10, 1, '11'),
+(5, 'coba', 'asd', 11, 1, '1');
 
 --
 -- Indexes for dumped tables
@@ -173,13 +178,13 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `nama_barang`
 --
 ALTER TABLE `nama_barang`
-  MODIFY `kode_barang` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `kode_barang` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `pemesanan`
 --
 ALTER TABLE `pemesanan`
-  MODIFY `kode_pemesanan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `kode_pemesanan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

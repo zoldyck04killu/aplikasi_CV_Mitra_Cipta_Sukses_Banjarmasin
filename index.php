@@ -15,12 +15,12 @@ $objAdmin = new Admin($obj);
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="<?=base_url();?>assets/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?=base_url();?>assets/css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/DataTables/datatables.min.css"/>
 
     <!-- Bootstrap core JavaScript -->
     <script src="<?=base_url()?>assets/jquery-3.1.1.min.js"></script>
-    <script src="<?=base_url()?>assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="<?=base_url()?>assets/bootstrap/js/bootstrap.bundle.min.js"></script> -->
 
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/DataTables/datatables.min.js"></script>
 

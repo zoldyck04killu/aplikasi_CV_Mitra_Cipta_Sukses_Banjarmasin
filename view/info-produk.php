@@ -8,18 +8,16 @@
     while ($kategori = $dataKategori->fetch_object()) {
     ?>
     <h3 class="card-title">Kategori : <?=$kategori->nama_kategori ?></h3>
-    Barang : 
+    Barang : <span style="float: right;">Harga :</span> <hr>
     <?php
     $id_kategori = $kategori->id_kategori;
     $dataBarang = $objAdmin->showBarangKategori($id_kategori);
     while ($barang = $dataBarang->fetch_object()) {
     ?>
-    <ul>
-      <li>
-        <?=$barang->nama_barang ?>
-      </li>
-    </ul>
-  <?php } ?>
+    <div class="alert alert-info" role="alert">
+      <b> <?=$barang->nama_barang ?></b> <b style="float: right;"><?php $rp = "Rp " . number_format($barang->harga,2,',','.'); echo $rp; ?></b>
+    </div>
+   <?php } ?>
   <?php } ?>
 
   </div>

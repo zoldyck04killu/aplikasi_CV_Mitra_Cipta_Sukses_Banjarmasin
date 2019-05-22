@@ -36,6 +36,11 @@
                     ?>
                   </select>
                 </div>
+                <div class="from-group">
+                  <label> Harga Barang </label>
+                  <input type="number" class="form-control" name="harga">
+                </div>
+                <br>
                 <button type="submit" class="btn btn-info" name="simpan">Simpan</button>
               </form>
             </div>
@@ -50,9 +55,10 @@ if (isset($_POST['simpan'])) {
   $barang 		  = $_POST['barang'];
 	$jenis_bahan 		  = $_POST['jenis_bahan'];
   $kategori 		  = $_POST['kategori'];
+  $harga          = $_POST['harga'];
 
 
-	$insert = $objAdmin->insertBarang($barang, $jenis_bahan,$kategori);
+	$insert = $objAdmin->insertBarang($barang, $jenis_bahan,$kategori,$harga);
 
 	if ($insert) {
 		echo '

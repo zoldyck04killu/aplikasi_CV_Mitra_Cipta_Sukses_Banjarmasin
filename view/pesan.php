@@ -16,7 +16,8 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Barang</label>
-                  <select class="form-control" id="exampleFormControlSelect1" name="jenis_bahan">
+                  <select class="form-control" id="pilihBarang" name="jenis_bahan">
+                    <option value="0">Pilih Barang</option>
                     <?php
                     $data = $objAdmin->showBarang();
                     while ($a = $data->fetch_object()) {
@@ -26,6 +27,10 @@
                     }
                     ?>
                   </select>
+                </div>
+                <div class="form-group">
+                  <label> Harga Barang Rp. </label>
+                  <input type="number" class="form-control" id="harga" name="harga" disabled>
                 </div>
                 <div class="form-group">
                   <label for="exampleFormControlInput1">Ukuran</label>
@@ -64,3 +69,29 @@ if (isset($_POST['simpan'])) {
 		';
 	}
 }
+
+
+
+?>
+
+
+<script type="text/javascript">
+  
+  $(document).ready(function(){
+
+      $('#pilihBarang').on('change', function(){
+          let kode_brg = $('#pilihBarang').val();
+            $.ajax({
+              url: '<?=base_url()?>/models/ajax.php',
+              type: 'POST',
+              dataType: 'JSON',
+              data: {type: 'get_harga', kode_brg: kode_brg},
+                success: function(res){
+                  $('#harga').val(res['harga']);
+                }
+            });
+      });
+
+  });
+
+</script>

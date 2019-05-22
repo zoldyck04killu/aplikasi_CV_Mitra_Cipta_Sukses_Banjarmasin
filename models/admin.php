@@ -61,10 +61,10 @@ class Admin
     return $query;
   }
 
-  function insertBarang($barang, $jenis_bahan,$kategori)
+  function insertBarang($barang, $jenis_bahan,$kategori,$harga)
 {
     $db = $this->mysqli->conn;
-    $db->query("INSERT INTO nama_barang (nama_barang,type_barang,kategori) VALUES ('$barang', '$jenis_bahan','$kategori')") or die ($db->error);
+    $db->query("INSERT INTO nama_barang (nama_barang,type_barang,kategori,harga) VALUES ('$barang', '$jenis_bahan','$kategori','$harga')") or die ($db->error);
     return true;
   }
 
@@ -242,6 +242,14 @@ class Admin
       }else{
           return false;
       }
+  }
+
+  public function get_harga($kode_brg)
+  {
+    $db = $this->mysqli->conn;
+    $sql = " SELECT harga FROM nama_barang WHERE kode_barang = '$kode_brg' ";
+    $query = $db->query($sql);
+    return $query;
   }
 
 }// end class

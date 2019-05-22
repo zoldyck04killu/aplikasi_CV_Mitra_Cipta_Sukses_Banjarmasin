@@ -13,6 +13,7 @@
         <th>Barang </th>
         <th>Ukuran </th>
         <th>No HP </th>
+        <th>Harga</th>
 
         <th>PILIHAN</th>
       </tr>
@@ -29,6 +30,9 @@
         <td><?=$a->nama_barang ?></td>
         <td><?=$a->ukuran ?></td>
         <td><?=$a->no_hp ?></td>
+        <td>
+          <?php $rp = "Rp " . number_format($a->harga,2,',','.'); echo $rp; ?>
+        </td>
 
         <td>
           <div class="btn-group">
