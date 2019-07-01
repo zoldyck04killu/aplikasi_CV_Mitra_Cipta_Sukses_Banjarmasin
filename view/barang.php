@@ -9,10 +9,11 @@
       <tr>
         <th>Kode Barang</th>
         <th>Nama Barang</th>
+        <th colspan="" rowspan="" headers="" scope="">Gambar</th>
         <th>Jenis Bahan </th>
         <th>Kategori </th>
         <th>Harga</th>
-
+        <th colspan="" rowspan="" headers="" scope="">Keterangan</th>
         <th>PILIHAN</th>
       </tr>
     </thead>
@@ -24,9 +25,11 @@
       <tr>
         <td><?=$a->kode_barang ?></td>
         <td><?=$a->nama_barang ?></td>
+        <td colspan="" rowspan="" headers=""> <?php echo $a->gambar_barang ? '<img src="'.base_url().'/assets/image/'.$a->gambar_barang.'" alt="" width="50px">' : 'No Image' ?> </td>
         <td><?=$a->jenis_bahan ?></td>
         <td><?=$a->nama_kategori ?></td>
         <td><?php $rp = "Rp " . number_format($a->harga,2,',','.'); echo $rp; ?></td>
+        <td colspan="" rowspan="" headers=""> <?=$a->keterangan ?> </td>
 
 
         <td>

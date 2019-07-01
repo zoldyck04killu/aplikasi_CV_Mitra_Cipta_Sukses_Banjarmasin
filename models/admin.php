@@ -131,10 +131,23 @@ class Admin
     return $query;
   }
 
-  public function updateBarang($kd_brg, $barang, $jenis_bahan,$kategori)
+  public function updateBarang($kd_brg, $barang, $nama_gambar, $jenis_bahan, $kategori, $keterangan)
   {
     $db = $this->mysqli->conn;
-    $sql = " UPDATE nama_barang SET nama_barang = '$barang', type_barang = '$jenis_bahan', kategori = '$kategori' WHERE kode_barang = '$kd_brg' ";
+    $sql = " UPDATE nama_barang SET nama_barang = '$barang', gambar_barang = '$nama_gambar', type_barang = '$jenis_bahan', kategori = '$kategori', keterangan = '$keterangan' WHERE kode_barang = '$kd_brg' ";
+    $query = $db->query($sql);
+
+      if ($query) {
+          return true;
+      }else{
+          return false;
+      }
+  }
+
+  public function updateBarangNoImg($kd_brg, $barang, $jenis_bahan,$kategori, $keterangan)
+  {
+    $db = $this->mysqli->conn;
+    $sql = " UPDATE nama_barang SET nama_barang = '$barang', type_barang = '$jenis_bahan', kategori = '$kategori', keterangan = '$keterangan' WHERE kode_barang = '$kd_brg' ";
     $query = $db->query($sql);
 
       if ($query) {
