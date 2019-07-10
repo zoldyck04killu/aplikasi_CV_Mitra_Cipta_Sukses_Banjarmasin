@@ -7,9 +7,8 @@
   $objAdmin = new Admin($obj);
 
   if (@$_REQUEST['type'] == 'get_harga') {
-      
-      $kode_brg = @$_POST['kode_brg'];
 
+      $kode_brg = @$_POST['kode_brg'];
       $harga = $objAdmin->get_harga($kode_brg)->fetch_object();
 
       echo json_encode($harga);

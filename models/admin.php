@@ -206,18 +206,22 @@ class Admin
       }
   }
 
-  function pemesanan($nama, $alamat,$jenis_bahan,$ukuran,$no_hp)
+  function pemesanan($nama, $alamat,$jenis_bahan_per,$ukuranTinggi_per,$ukuranLebar_per,$no_hp)
   {
+    $date_pemesanan = date('Y/m/d');
     $db = $this->mysqli->conn;
-    $db->query("INSERT INTO pemesanan (nama_pemesan,alamat,barang,ukuran,no_hp) VALUES ('$nama', '$alamat','$jenis_bahan','$ukuran','$no_hp')") or die ($db->error);
+    $sql = $db->query("INSERT INTO pemesanan (nama_pemesan,alamat,barang,ukuran_tinggi,ukuran_lebar,no_hp,tgl_pemesanan)
+          VALUES ('$nama', '$alamat','$jenis_bahan_per','$ukuranTinggi_per','$ukuranLebar_per','$no_hp','$date_pemesanan')") or die ($db->error);
 
-    $sql = " SELECT jenis_bahan.ukuran_bahan, jenis_bahan.kode_jenis_bahan FROM nama_barang
-          INNER JOIN jenis_bahan ON nama_barang.type_barang = jenis_bahan.kode_jenis_bahan WHERE nama_barang.kode_barang = '$jenis_bahan' ";
-    $query = $db->query($sql);
-    $a = $query->fetch_object();
-    $ukuran_baru = $a->ukuran_bahan - $ukuran;
+    // $sql = " SELECT jenis_bahan.ukuran_bahan, jenis_bahan.kode_jenis_bahan FROM nama_barang
+    //       INNER JOIN jenis_bahan ON nama_barang.type_barang = jenis_bahan.kode_jenis_bahan WHERE nama_barang.kode_barang = '$jenis_bahan' ";
+    // $query = $db->query($sql);
+    // $a = $query->fetch_object();
+    // $ukuran_dibeli = $ukuranTinggi_per * $ukuranLebar_per;
+    // $ukuran_baru = $ukuran_dibeli - $ukuran;
 
-    $sql = " UPDATE jenis_bahan SET ukuran_bahan = '$ukuran_baru' WHERE kode_jenis_bahan = '$a->kode_jenis_bahan' ";
+
+    // $sql = " UPDATE jenis_bahan SET ukuran_bahan = '$ukuran_baru' WHERE kode_jenis_bahan = '$a->kode_jenis_bahan' ";
     $query = $db->query($sql);
     return true;
   }

@@ -11,7 +11,9 @@
         <th>Nama Pemesan</th>
         <th>Alamat </th>
         <th>Barang </th>
-        <th>Ukuran </th>
+        <th>Ukuran Tinggi</th>
+        <th>Ukuran Lebar</th>
+
         <th>No HP </th>
         <th>Harga</th>
 
@@ -28,7 +30,9 @@
         <td><?=$a->nama_pemesan ?></td>
         <td><?=$a->alamat ?></td>
         <td><?=$a->nama_barang ?></td>
-        <td><?=$a->ukuran ?></td>
+        <td><?=$a->ukuran_tinggi ?></td>
+        <td><?=$a->ukuran_lebar ?></td>
+
         <td><?=$a->no_hp ?></td>
         <td>
           <?php $rp = "Rp " . number_format($a->harga,2,',','.'); echo $rp; ?>

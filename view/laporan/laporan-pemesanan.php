@@ -62,6 +62,8 @@ $html=<<<EOD
           <th>Barang</th>
           <th>Ukuran</th>
           <th>No Hp</th>
+          <th>Tanggal Pemesanan</th>
+
 
       </tr>
     </table>
@@ -91,7 +93,8 @@ $no = 1;
             <td>'.$data->alamat.'</td>
             <td>'.$data->nama_barang.'</td>
             <td>'.$data->ukuran.'</td>
-            <td>'.$data->no_hp.'
+            <td>'.$data->no_hp.'</td>
+            <td>'.$data->tgl_pemesanan.'
             '.$html5 , 0, 1, 0, true, '', true);
     $no++;
   }
