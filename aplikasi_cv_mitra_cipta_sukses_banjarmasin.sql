@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 21, 2019 at 03:53 AM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 5.6.38
+-- Host: localhost
+-- Generation Time: Jul 01, 2019 at 07:24 PM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -41,7 +41,8 @@ CREATE TABLE `jenis_bahan` (
 --
 
 INSERT INTO `jenis_bahan` (`kode_jenis_bahan`, `harga_bahan`, `jenis_bahan`, `ketarangan`, `ukuran_bahan`) VALUES
-(3, 90000, 'Kertas', 'ok', 2);
+(3, 90000, 'Kertas', 'ok', 2),
+(4, 100, 'tes', 'tes', 10);
 
 -- --------------------------------------------------------
 
@@ -89,21 +90,19 @@ INSERT INTO `login` (`id_admin`, `password`) VALUES
 CREATE TABLE `nama_barang` (
   `kode_barang` int(50) NOT NULL,
   `nama_barang` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gambar_barang` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `type_barang` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `kategori` int(50) NOT NULL,
-  `harga` int(50) NOT NULL
+  `harga` int(50) NOT NULL,
+  `keterangan` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `nama_barang`
 --
 
-INSERT INTO `nama_barang` (`kode_barang`, `nama_barang`, `type_barang`, `kategori`, `harga`) VALUES
-(10, 'Printer', '3', 2, 1000000),
-(11, 'kulkas', '3', 2, 90000),
-(12, 'Baliho', '3', 3, 500000),
-(13, 'Karung', '3', 2, 40000),
-(14, 'Tisu', '3', 2, 10000);
+INSERT INTO `nama_barang` (`kode_barang`, `nama_barang`, `gambar_barang`, `type_barang`, `kategori`, `harga`, `keterangan`) VALUES
+(23, 'Baliho', 'Img-156198376469.png', '3', 2, 5000000, 'baliho adalah barang oke siapa');
 
 -- --------------------------------------------------------
 
@@ -166,7 +165,7 @@ ALTER TABLE `pemesanan`
 -- AUTO_INCREMENT for table `jenis_bahan`
 --
 ALTER TABLE `jenis_bahan`
-  MODIFY `kode_jenis_bahan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `kode_jenis_bahan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `kategori`
@@ -178,7 +177,7 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `nama_barang`
 --
 ALTER TABLE `nama_barang`
-  MODIFY `kode_barang` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `kode_barang` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `pemesanan`

@@ -146,5 +146,9 @@ elseif (@$_GET['view'] == 'cara-pemesanan')
 {
 	include 'view/cara-pemesanan.php';
 }
+elseif (@$_GET['view'] == 'detail') 
+{
+	include 'view/detail.php';
+}
 
 //

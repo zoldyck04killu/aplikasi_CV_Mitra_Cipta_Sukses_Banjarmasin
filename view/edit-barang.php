@@ -16,7 +16,7 @@ $edit = $objAdmin->edit_brg($id)->fetch_object();
   <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-12 col-md-offset-3 col-sm-8 col-sm-offset-2">
             <div class="panel panel-info">
             <div class="panel-body" >
-              <form action="" method="post">
+              <form action="" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                   <label for="exampleFormControlInput1">Nama Barang</label>
                   <input type="hidden" name="id" value="<?=$edit->kode_barang ?>">
@@ -49,6 +49,13 @@ $edit = $objAdmin->edit_brg($id)->fetch_object();
                     ?>
                   </select>
                 </div>
+                <div class="form-group">
+                  <img src="<?=base_url()?>/assets/image/<?=$edit->gambar_barang ?>" alt="" width="50px">
+                  <input type="file" name="gambar" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input type="text" name="keterangan" class="form-control" value="<?=$edit->keterangan ?>">
+                </div>
                 <button type="submit" class="btn btn-info" name="update">Update</button>
               </form>
             </div>
@@ -61,12 +68,39 @@ $edit = $objAdmin->edit_brg($id)->fetch_object();
 if (isset($_POST['update'])) {
 
   $kd_brg       = $_POST['id'];
-  $barang 		= $_POST['barang'];
+  $barang 		  = $_POST['barang'];
   $jenis_bahan 	= $_POST['jenis_bahan'];
   $kategori     = $_POST['kategori'];
+  $keterangan   = $_POST['keterangan'];
+  $gambar       = $_FILES['gambar']['name'];
+
+  if ($gambar != '') {
+     
+      if (file_exists('./assets/image/'.$edit->gambar_barang)) {
+          
+          unlink('./assets/image/'.$edit->gambar_barang);
+          $tmp_name = $_FILES['gambar']['tmp_name'];
+          $format   = "Img-".round(microtime(true)). "";  
+          $ext      = pathinfo($gambar, PATHINFO_EXTENSION);
+          move_uploaded_file($tmp_name, "./assets/image/".$nama_gambar = $format.rand(10, 100).".".$ext);
+          $update = $objAdmin->updateBarang($kd_brg, $barang, $nama_gambar, $jenis_bahan, $kategori, $keterangan);
+
+      }else{
+
+          $tmp_name = $_FILES['gambar']['tmp_name'];
+          $format   = "Img-".round(microtime(true)). "";  
+          $ext      = pathinfo($gambar, PATHINFO_EXTENSION);
+          move_uploaded_file($tmp_name, "./assets/image/".$nama_gambar = $format.rand(10, 100).".".$ext);
+          $update = $objAdmin->updateBarang($kd_brg, $barang, $nama_gambar, $jenis_bahan, $kategori, $keterangan);
+      }
+  
+  }else{
+      
+    $update = $objAdmin->updateBarangNoImg($kd_brg, $barang, $jenis_bahan,$kategori,$keterangan);
+
+  }
 
 
-	$update = $objAdmin->updateBarang($kd_brg, $barang, $jenis_bahan,$kategori);
 
 	if ($update) {
 		echo '

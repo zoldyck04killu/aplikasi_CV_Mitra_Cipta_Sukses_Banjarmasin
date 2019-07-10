@@ -15,7 +15,7 @@
     while ($barang = $dataBarang->fetch_object()) {
     ?>
     <div class="alert alert-info" role="alert">
-      <b> <?=$barang->nama_barang ?></b> <b style="float: right;"><?php $rp = "Rp " . number_format($barang->harga,2,',','.'); echo $rp; ?></b>
+      <b> <a href="?view=detail&barang=<?=$barang->kode_barang ?>" title=""><?=$barang->nama_barang ?></a> </b> <b style="float: right;"><?php $rp = "Rp " . number_format($barang->harga,2,',','.'); echo $rp; ?></b>
     </div>
    <?php } ?>
   <?php } ?>

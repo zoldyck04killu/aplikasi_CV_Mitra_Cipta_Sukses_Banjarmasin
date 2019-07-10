@@ -61,10 +61,10 @@ class Admin
     return $query;
   }
 
-  function insertBarang($barang, $jenis_bahan,$kategori,$harga)
+  function insertBarang($barang, $nama_gambar, $jenis_bahan, $kategori, $harga, $keterangan)
 {
     $db = $this->mysqli->conn;
-    $db->query("INSERT INTO nama_barang (nama_barang,type_barang,kategori,harga) VALUES ('$barang', '$jenis_bahan','$kategori','$harga')") or die ($db->error);
+    $db->query("INSERT INTO nama_barang (nama_barang,gambar_barang,type_barang,kategori,harga,keterangan) VALUES ('$barang', '$nama_gambar', '$jenis_bahan','$kategori','$harga', '$keterangan')") or die ($db->error);
     return true;
   }
 
@@ -131,10 +131,23 @@ class Admin
     return $query;
   }
 
-  public function updateBarang($kd_brg, $barang, $jenis_bahan,$kategori)
+  public function updateBarang($kd_brg, $barang, $nama_gambar, $jenis_bahan, $kategori, $keterangan)
   {
     $db = $this->mysqli->conn;
-    $sql = " UPDATE nama_barang SET nama_barang = '$barang', type_barang = '$jenis_bahan', kategori = '$kategori' WHERE kode_barang = '$kd_brg' ";
+    $sql = " UPDATE nama_barang SET nama_barang = '$barang', gambar_barang = '$nama_gambar', type_barang = '$jenis_bahan', kategori = '$kategori', keterangan = '$keterangan' WHERE kode_barang = '$kd_brg' ";
+    $query = $db->query($sql);
+
+      if ($query) {
+          return true;
+      }else{
+          return false;
+      }
+  }
+
+  public function updateBarangNoImg($kd_brg, $barang, $jenis_bahan,$kategori, $keterangan)
+  {
+    $db = $this->mysqli->conn;
+    $sql = " UPDATE nama_barang SET nama_barang = '$barang', type_barang = '$jenis_bahan', kategori = '$kategori', keterangan = '$keterangan' WHERE kode_barang = '$kd_brg' ";
     $query = $db->query($sql);
 
       if ($query) {
@@ -252,6 +265,14 @@ class Admin
   {
     $db = $this->mysqli->conn;
     $sql = " SELECT harga FROM nama_barang WHERE kode_barang = '$kode_brg' ";
+    $query = $db->query($sql);
+    return $query;
+  }
+
+  public function get_detail_barang($id)
+  {
+    $db = $this->mysqli->conn;
+    $sql = "SELECT * FROM nama_barang WHERE kode_barang = '$id' ";
     $query = $db->query($sql);
     return $query;
   }
