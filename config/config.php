@@ -7,8 +7,8 @@ session_start();
 
 $host = "localhost";
 $user = "root";
-$pass = "123";
-$db   = "aplikasi_cv_mitra_cipta_sukses_banjarmasin";
+$pass = "4";
+$db   = "aplikasi_CV_Mitra_Cipta_Sukses_Banjarmasin";
 
 // end database settings
 
